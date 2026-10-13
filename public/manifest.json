@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "minimum_chrome_version": "120",
+  "name": "Link Library",
+  "version": "0.1.0",
+  "description": "A local archive of bookmarks, history, and available synced device tabs.",
+  "incognito": "not_allowed",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "popup.html", "default_title": "Link Library" },
+  "optional_permissions": ["bookmarks", "history", "sessions", "tabs"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
